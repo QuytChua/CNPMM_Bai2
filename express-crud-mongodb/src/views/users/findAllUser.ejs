@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Danh sách User</title>
+  </head>
+  <body>
+    <h2>Danh sách User</h2>
+    <table border="1">
+      <tr>
+        <th>First</th>
+        <th>Last</th>
+        <th>Email</th>
+        <th>Address</th>
+        <th>Action</th>
+      </tr>
+      <% dataTable.forEach(user => { %>
+      <tr>
+        <td><%= user.firstName %></td>
+        <td><%= user.lastName %></td>
+        <td><%= user.email %></td>
+        <td><%= user.address %></td>
+        <td>
+          <a href="/edit-crud?id=<%= user._id %>">Sửa</a>
+          <a href="/delete-crud?id=<%= user._id %>">Xóa</a>
+        </td>
+      </tr>
+      <% }) %>
+    </table>
+    <a href="/">Thêm User</a>
+  </body>
+</html>
